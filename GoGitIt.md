@@ -66,20 +66,21 @@ Use the following command line to see your **public** key.
 The previous command will give you a series come letters and numbers that start with "ssh-rsa"
 
 ## **Step 7: Add your _PUBLIC_ key to this repo**
+
 **Remember not to add your private key** 
 You'll set your private key later on your client to use to authenticate to github.
 
-# Make sure you create a new access token to authenticate. [Find this here.](https://github.com/settings/tokens)
+Make sure you create a new access token to authenticate. [Find this here.](https://github.com/settings/tokens)
 
 When you first create the token the string will be shown but it won't be shown again. *Be sure to save this.*
 
-# Run this command to set username and email:
+**Run this command to set username and email:**
 ```
 git config --global --edit
 ```
 Uncomment the username and email lines.
 
-# Create .git-credentials file in your home directory and add your token to this file.
+**Create .git-credentials file in your home directory and add your token to this file.**
 
 ```
 cd ~
@@ -92,13 +93,13 @@ Example:
 username:TOKEN@git@github.com:USERNAME/USERNAME.git
 ```
 
-# Then, you need to clone a remote repository to your device.
+**Then, you need to clone a remote repository to your device.**
 Example:
 ```
 git clone git@github.com/USERNAME/USERNAME.git
 ```
 
-# Once you have a local copy, we need to verify first that nothing is configured.
+**Once you have a local copy, we need to verify first that nothing is configured.**
 
 ```
 git status
@@ -108,9 +109,9 @@ git remote -v
 ssh -T git@github.com
 ```
 
-# We should recieve responses here indicating nothing has been configured yet. Remember to always "check" yourself while on the terminal so you always know the current scenario.
+**We should recieve responses here indicating nothing has been configured yet. Remember to always "check" yourself while on the terminal so you always know the current scenario.**
 
-# We then need to add our SSH RSA private key to the ssh client.
+**We then need to add our SSH RSA private key to the ssh client.**
 
 ```
 eval "$(ssh-agent -s)"
@@ -119,7 +120,7 @@ ssh-add ~/.ssh/privkey
 ssh-add -l
 ssh -T git@github.com
 ```
-# This should ask you for your passphrase and log you in.
+**This should ask you for your passphrase and log you in.**
 
 ## **Step 7: Add the remote repository**
 
@@ -127,11 +128,11 @@ ssh -T git@github.com
 git remote -v
 git status
 ```
-# Note that you may have to run 'git remote set-url origin git@github.com:USERNAME/USERNAME.git' if the remote repo is set to HTTPS.
+**Note that you may have to run 'git remote set-url origin git@github.com:USERNAME/USERNAME.git' if the remote repo is set to HTTPS.**
 
-# This should indicate that you have properly added the remote repository and are correctly configured to push changes.
+**This should indicate that you have properly added the remote repository and are correctly configured to push changes.**
 
-# Now we make changes to our directory and files, then push changes to our github.
+**Now we make changes to our directory and files, then push changes to our github.**
 
 ```
 nano whatever.md
